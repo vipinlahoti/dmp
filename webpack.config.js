@@ -174,7 +174,7 @@ module.exports = function makeWebpackConfig() {
     config.plugins.push(
       new HtmlWebpackPlugin({
         template: './app/index.html',
-        inject: 'body'
+        hash: true
       }),
 
       // Reference: https://github.com/webpack/extract-text-webpack-plugin

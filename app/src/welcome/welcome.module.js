@@ -1,20 +1,17 @@
 'use strict';
 
-var name = module.exports = 'dmPortal.welcome';
+const MODULE_NAME = module.exports = 'dmPortal.welcome';
 
 angular
-  .module(name, [])
+  .module(MODULE_NAME, [])
   .config(configuration)
-  .controller('Welcome', require('./welcome.controller.js'))
-;
+  .controller('Welcome', require('./welcome.controller.js'));
 
-function configuration($stateProvider) {
-  $stateProvider
-    .state('Welcome', {
-      url: '/welcome',
+function configuration($routeProvider) {
+  $routeProvider
+    .when('/welcome', {
       template: require('./welcome.html'),
       controller: 'Welcome as vm',
       title: 'ng-Super Welcome'
     });
-
 }
